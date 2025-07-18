@@ -45,7 +45,7 @@ public class PhoneBook {
     }
 
     public void remove(String name) {
-        phoneBook.remove(name);
+       // phoneBook.remove(name);
     }
 
     public Boolean hasEntry(String name) {
