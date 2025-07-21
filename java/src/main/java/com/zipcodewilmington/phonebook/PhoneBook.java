@@ -45,26 +45,33 @@ public class PhoneBook {
     }
 
     public void remove(String name) {
-       // phoneBook.remove(name);
+       phonebook.remove(name);
     }
 
     public Boolean hasEntry(String name) {
-        return null;
+        return phonebook.containsKey(name);
     }
 
     public List<String> lookup(String name) {
-        return null;
+         return phonebook.get(name);
+
     }
 
     public String reverseLookup(String phoneNumber)  {
-        return null;
+       for (Map.Entry<String, List<String>> entry : phonebook.entrySet()) {
+            if (entry.getValue().contains(phoneNumber)) 
+            {
+                return entry.getKey();
+            }
+        }
+        return null; // not found
     }
 
     public List<String> getAllContactNames() {
-        return null;
+        return new ArrayList<>(phonebook.keySet());
     }
 
     public Map<String, List<String>> getMap() {
-        return null;
+        return  phonebook;
     }
 }
